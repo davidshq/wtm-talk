@@ -1,0 +1,21 @@
+[project]
+name = "mutmut-mutation-demo"
+version = "1.0.0"
+description = "Checkout pricing demo used to show mutmut mutation testing."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "mutmut>=3.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.mutmut]
+source_paths = ["src/"]
+pytest_add_cli_args_test_selection = ["tests/"]
